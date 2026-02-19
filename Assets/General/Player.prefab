@@ -10,11 +10,12 @@ GameObject:
   m_Component:
   - component: {fileID: 7926868804560232153}
   - component: {fileID: 7167630673549348440}
-  - component: {fileID: -5633538909211688961}
-  - component: {fileID: 5872520325920647836}
+  - component: {fileID: 1567080386466740413}
+  - component: {fileID: 2399329706061230787}
+  - component: {fileID: 826281165554066797}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -153,7 +154,34 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
---- !u!114 &-5633538909211688961
+--- !u!54 &1567080386466740413
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274049752629083010}
+  serializedVersion: 5
+  m_Mass: 1
+  m_LinearDamping: 0
+  m_AngularDamping: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!114 &2399329706061230787
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -162,17 +190,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1274049752629083010}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2ef33e9735bd9543836e5268161b6b4, type: 3}
+  m_Script: {fileID: 11500000, guid: ce8aaa7074ebc4b4bbf111efd4ff4083, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: '::'
-  moveSpeed: 10
-  jumpHeight: 1.5
-  gravity: -9.81
+  m_EditorClassIdentifier: Assembly-CSharp::TestingRigidbodyPlayerMovement
+  moveSpeed: 5
+  jumpForce: 5
+  groundCheckDistance: 0.2
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 1
   rotationSpeed: 10
   model: {fileID: 7570078969606185495}
-  animationSmoothTime: 0.1
---- !u!143 &5872520325920647836
-CharacterController:
+  poundForce: 20
+--- !u!136 &826281165554066797
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -186,16 +217,14 @@ CharacterController:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
+  m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 3
-  m_Height: 2
+  serializedVersion: 2
   m_Radius: 0.5
-  m_SlopeLimit: 45
-  m_StepOffset: 0.3
-  m_SkinWidth: 0.08
-  m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.96, z: 0}
+  m_Height: 2
+  m_Direction: 1
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!1001 &7336147631124848454
 PrefabInstance:
   m_ObjectHideFlags: 0

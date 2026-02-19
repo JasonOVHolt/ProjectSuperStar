@@ -8,7 +8,6 @@ public class TestingPlayerMovement : MonoBehaviour
     private Animator _animator;
     private Vector2 _moveInput;
     private Vector3 _moveDirection;
-    private Transform specificParent; // The target parent in the scene
 
     [Header("Movement Stats")]
     public float moveSpeed = 5.0f;
@@ -35,20 +34,7 @@ public class TestingPlayerMovement : MonoBehaviour
     private void Awake()
     {
         _controller = GetComponent<CharacterController>();
-        specificParent = GameObject.Find("PlayerSpawner").transform;
-        transform.parent = specificParent;
 
-        for (int i = 0; i < specificParent.childCount; i++)
-        {
-            Transform child = specificParent.GetChild(i);
-            if (child == transform)
-            {
-                transform.gameObject.name = "P" + (i + 1);
-                ///SET MODEL FROM PLAYERPREFS
-                ///INSTATIATE HERE
-                break;
-            }
-        }
 
         _animator = GetComponentInChildren<Animator>();
 
