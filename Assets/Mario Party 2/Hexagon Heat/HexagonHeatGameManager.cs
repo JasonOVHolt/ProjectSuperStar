@@ -98,7 +98,6 @@ public class HexagonHeatGameManager : MonoBehaviour
 
     private void UpdateRoundTimes()
     {
-        float mod = rounds % 5;
         switch (rounds)
         {
             case 5:

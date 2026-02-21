@@ -50,6 +50,7 @@ public class TestingRigidbodyPlayerMovement : MonoBehaviour
         {
             // Using Impulse for an immediate jump feel
             _rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+            _animator.SetTrigger("Jump");
         }
     }
 
